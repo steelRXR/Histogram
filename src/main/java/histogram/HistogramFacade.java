@@ -6,7 +6,6 @@ import histogram.factory.HistogramFactory;
 import java.util.Map;
 
 public class HistogramFacade {
-
     HistogramFactory histogramFactory = new HistogramFactory();
     HistogramCSVGenerator histogramCSVGenerator = new HistogramCSVGenerator();
 
