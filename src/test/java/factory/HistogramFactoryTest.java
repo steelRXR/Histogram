@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class HistogramFactoryTest {
 
-    HistogramFactory histogramFactory = new HistogramFactory();
+    HistogramFactory histogramFactory = new HistogramFactory("src/test/resources/histogram-test.properties");
 
     @Test
     public void testStandardText() {

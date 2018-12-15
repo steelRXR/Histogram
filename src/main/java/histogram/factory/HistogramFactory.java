@@ -1,7 +1,7 @@
 package histogram.factory;
 
 import histogram.config.HistogramConfigurationLoader;
-import histogram.model.HistogramConfiguration;
+import histogram.config.HistogramConfiguration;
 
 import java.util.Map;
 

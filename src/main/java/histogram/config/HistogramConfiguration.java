@@ -1,4 +1,4 @@
-package histogram.model;
+package histogram.config;
 
 import java.util.HashSet;
 import java.util.Set;

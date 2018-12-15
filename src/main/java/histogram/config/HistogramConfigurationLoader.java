@@ -1,7 +1,5 @@
 package histogram.config;
 
-import histogram.model.HistogramConfiguration;
-
 import java.util.Arrays;
 import java.util.List;
 
