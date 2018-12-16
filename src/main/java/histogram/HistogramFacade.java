@@ -10,8 +10,16 @@ import java.util.Map;
 
 public class HistogramFacade {
 
-    HistogramFactory histogramFactory = new HistogramFactory();
+    HistogramFactory histogramFactory;
     HistogramCSVGenerator histogramCSVGenerator = new HistogramCSVGenerator();
+
+    public HistogramFacade() {
+        this.histogramFactory = new HistogramFactory();
+    }
+
+    public HistogramFacade(String propertyFileName) {
+        histogramFactory = new HistogramFactory(propertyFileName);
+    }
 
     public Map<Character, Long> generateHistogram(String text) {
         //return histogram from passed text
