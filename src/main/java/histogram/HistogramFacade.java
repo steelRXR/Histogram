@@ -10,8 +10,8 @@ import java.util.Map;
 
 public class HistogramFacade {
 
-    HistogramFactory histogramFactory;
-    HistogramCSVGenerator histogramCSVGenerator = new HistogramCSVGenerator();
+    private HistogramFactory histogramFactory;
+    private HistogramCSVGenerator histogramCSVGenerator = new HistogramCSVGenerator();
 
     public HistogramFacade() {
         this.histogramFactory = new HistogramFactory();
