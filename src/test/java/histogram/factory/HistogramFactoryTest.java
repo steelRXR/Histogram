@@ -1,7 +1,6 @@
 package histogram.factory;
 
 import com.google.common.collect.ImmutableMap;
-import histogram.factory.HistogramFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ public class HistogramFactoryTest {
     public void testStandardText() {
         //given
         String text = "aabbcc";
-        ImmutableMap<Object, Object> expected = ImmutableMap.builder()
+        ImmutableMap<Character, Long> expected = ImmutableMap.<Character, Long>builder()
                 .put('a', 2L)
                 .put('b', 2L)
                 .put('c', 2L)
@@ -32,7 +31,7 @@ public class HistogramFactoryTest {
     public void testTextWithSpaces() {
         //given
         String text = "aab bc c";
-        ImmutableMap<Object, Object> expected = ImmutableMap.builder()
+        ImmutableMap<Character, Long> expected = ImmutableMap.<Character, Long>builder()
                 .put('a', 2L)
                 .put('b', 2L)
                 .put('c', 2L)
@@ -50,7 +49,7 @@ public class HistogramFactoryTest {
     public void testTextWithNewLines() {
         //given
         String text = "aabb\nc";
-        ImmutableMap<Object, Object> expected = ImmutableMap.builder()
+        ImmutableMap<Character, Long> expected = ImmutableMap.<Character, Long>builder()
                 .put('a', 2L)
                 .put('b', 2L)
                 .put('c', 1L)
@@ -71,7 +70,7 @@ public class HistogramFactoryTest {
                 "\n" +
                 "In vitae egestas ipsum. Sed quis orci ligula. Maecenas maximus massa vel elit porttitor lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Quisque et leo est. Nunc efficitur euismod eros aliquam commodo. Etiam efficitur faucibus efficitur.";
 
-        ImmutableMap<Object, Object> expected = ImmutableMap.builder()
+        ImmutableMap<Character, Long> expected = ImmutableMap.<Character, Long>builder()
                 .put('a', 54L)
                 .put('b', 6L)
                 .put('c', 32L)
