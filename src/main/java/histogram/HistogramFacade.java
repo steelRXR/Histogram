@@ -28,12 +28,19 @@ public class HistogramFacade {
     }
 
     public String generateHistogramCSV(String text) {
-        //return histogram CSV in String
-        return null;
+        String histogramCSV = histogramCSVGenerator.convertHistogramToCSV(generateHistogram(text));
+        return histogramCSV;
     }
 
     public void saveHistogramToCSV(String text, String fileName) {
-        //generate histogram from passed text as argument and save him as CSV to file
+       try{
+           BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+           writer.write(text);
+           writer.close();
+       } catch (IOException e) {
+           System.out.println(e.getMessage());
+           e.printStackTrace();
+       }
     }
 
 }
