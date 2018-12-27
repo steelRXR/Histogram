@@ -18,12 +18,13 @@ public class HistogramFacade {
     }
 
     public HistogramFacade(String propertyFileName) {
+
         histogramFactory = new HistogramFactory(propertyFileName);
     }
 
     public Map<Character, Long> generateHistogram(String text) {
-        //return histogram from passed text
-        return null;
+        Map<Character, Long> histogram = histogramFactory.createHistogram(text);
+        return histogram;
     }
 
     public String generateHistogramCSV(String text) {

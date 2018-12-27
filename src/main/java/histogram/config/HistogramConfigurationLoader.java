@@ -1,5 +1,7 @@
 package histogram.config;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -16,18 +18,23 @@ public class HistogramConfigurationLoader {
             boolean whiteSpaces;
 
         try{
-            Properties prop = new Properties();
+            Properties properties = new Properties();
             inputstream = getClass().getClassLoader().getResourceAsStream(propertyFileName);
 
+
+            System.out.println(inputstream);
             if(inputstream != null) {
-                prop.load(inputstream);
+                properties.load(inputstream);
+            }else throw new FileNotFoundException("property file not found");
+
+            if(properties.getProperty("histogram.ignore.white-spaces").equals("true")) {
+                whiteSpaces = true;
+            }
+            else {
+                whiteSpaces = false;
             }
 
-            if (prop.getProperty("histogram.ignore.white-spaces").equals("true"))
-                whiteSpaces = true;
-            else whiteSpaces = false;
-
-            char[] property = prop.getProperty("histogram.ignore.characters").toCharArray();
+            char[] property = properties.getProperty("histogram.ignore.characters").toCharArray();
             for(Character character : property){
                 characters.add(character);
             }
@@ -37,6 +44,7 @@ public class HistogramConfigurationLoader {
 
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Exception: " + e);
         }
 
         return histogramConfiguration;
