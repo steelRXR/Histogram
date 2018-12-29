@@ -21,7 +21,7 @@ public class HistogramFactory {
     }
 
     public Map<Character,Long> createHistogram(String text) {
-        //load configuration every time before create histogram
+
         HistogramConfiguration config = histogramConfiguration.loadProperties(propertyFileName);
         boolean ignoreWhiteSpaces = config.shouldIgnoreWhiteSpaces();
         Set<Character> ignoreCharacters = config.getIgnoreCharacters();

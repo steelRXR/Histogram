@@ -21,8 +21,6 @@ public class HistogramConfigurationLoader {
             Properties properties = new Properties();
             inputstream = getClass().getClassLoader().getResourceAsStream(propertyFileName);
 
-
-            System.out.println(inputstream);
             if(inputstream != null) {
                 properties.load(inputstream);
             }else throw new FileNotFoundException("property file not found");
